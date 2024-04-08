@@ -13,6 +13,7 @@ interface ICardHero {
   hero: IHeroes;
 }
 
+import styles from "./CardHero.module.css";
 // Definición del componente funcional CardHero que muestra la información de un héroe en una tarjeta
 export const CardHero: FC<ICardHero> = ({ hero }) => {
   // Hook useNavigate para manejar la navegación a la página de detalles del héroe
@@ -25,7 +26,11 @@ export const CardHero: FC<ICardHero> = ({ hero }) => {
 
   // Devolución del JSX que representa la tarjeta del héroe
   return (
-    <Card onClick={handleNavigateHero} style={{ width: "100%" }}>
+    <Card
+      className={styles.card}
+      onClick={handleNavigateHero}
+      style={{ width: "100%" }}
+    >
       {/* Imagen del héroe */}
       <Card.Img variant="top" src={`/assets/heroes/${hero.id}.jpg`} />
       {/* Cuerpo de la tarjeta con la información del héroe */}

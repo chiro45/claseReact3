@@ -45,6 +45,8 @@ export const Login = () => {
     if (userFound) {
       dispatch(setLogin(user));
       navigate("/");
+    } else {
+      alert("Usuario o contraseña no encontrados");
     }
   };
 
